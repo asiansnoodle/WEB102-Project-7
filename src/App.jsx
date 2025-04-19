@@ -7,6 +7,7 @@ import CrewmateGallery from './components/CrewmateGallery'
 import ErrorPage from './components/ErrorPage'
 import CrewmateInfoPage from './components/CrewmateInfoPage'
 import './assets/css/styles.css'
+import EditCrewmate from './components/EditCrewmate'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/create' element={<CreateCrewmate/>}></Route>
             <Route path='/gallery' element={<CrewmateGallery/>}></Route>
             <Route path='/:id' element={<CrewmateInfoPage/>}></Route>
+            <Route path='/:id/edit' element={<EditCrewmate/>}></Route>
             <Route path='*' element={<ErrorPage/>}></Route>
         </Routes>
       </div>

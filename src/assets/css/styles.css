@@ -5,6 +5,13 @@
     text-align: center;
 }
 
+span {
+    background-color: #aaa;
+    color: #000;
+    padding: 3px;
+    border-radius: 3px;
+}
+
 .app {
     display: flex;
     flex-direction: row;

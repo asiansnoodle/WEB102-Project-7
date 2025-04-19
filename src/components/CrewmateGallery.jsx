@@ -20,17 +20,20 @@ const CrewmateGallery = () => {
         getData()
     }, [])
 
-    if(mates){
-        console.log(mates)
-    }
-
     if (mates){
         return (
             <div className="crewmate-gallery">
                 <Outlet/>
                 <h1>Your Crewmate Gallery!</h1>
                 <div className="crewmate-container">
-                    {mates.map((mate) => <Link to='/:id'><CrewmateCard/></Link>)}
+                    {mates.map((mate) => 
+                        <div className="crewmate-card">
+                            <Link to={`/${mate.id}`} key={mate.id} style={{ textDecoration: "none", color: "inherit" }}>
+                                <CrewmateCard color={mate.color} name={mate.name} speed={mate.speed} id={mate.id}/>
+                            </Link>
+                            <Link to={`/${mate.id}/edit`} className="submit-button" style={{textDecoration: "none", color: "inherit"}}>Edit Crewmate</Link>
+                        </div>)
+                    }
                 </div>
             </div>
         )

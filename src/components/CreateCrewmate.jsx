@@ -4,16 +4,15 @@ import { supabase } from "../client"
 const CreateCrewmate = () => {
     
     const [name, setName] = useState("")
-    const [speed, setSpeed] = useState(0)
+    const [speed, setSpeed] = useState('')
     const [color, setColor] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const {data, error} = await supabase.from('crewmates').insert({name: name, speed: speed, color: color}).select()
         if (data){
-            console.log(data)
             setName("");
-            setSpeed(0)
+            setSpeed('')
             setColor("")
         }
         else if (error){
